@@ -1,0 +1,22 @@
+{
+    "name": "herrira/mermaid",
+    "autoload": {
+        "psr-4": {
+            "Herrira\\Mermaid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ramy Herrira",
+            "email": "ramy.herrira@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
