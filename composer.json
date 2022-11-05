@@ -1,5 +1,6 @@
 {
     "name": "herrira/mermaid",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Herrira\\Mermaid\\": "src/"
