@@ -9,7 +9,7 @@ class Builder
     public function class($name): self
     {
         if ($name instanceof \Closure) {
-            $name($class = new ClassDefinition($name));
+            $name($class = new ClassBuilder());
             $this->expressions[] = $class->generate();
         } else {
             $this->expressions[] = "class {$name}\n";

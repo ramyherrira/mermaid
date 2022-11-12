@@ -3,20 +3,20 @@
 namespace Tests\Unit\ClassDiagram;
 
 use PHPUnit\Framework\TestCase;
-use Herrira\Mermaid\ClassDiagram\ClassDefinition as ClassSchema;
+use Herrira\Mermaid\ClassDiagram\ClassBuilder;
 
-class ClassDefinitionTest extends TestCase
+class ClassBuilderTest extends TestCase
 {
     public function test_generate_empty_class()
     {
-        $schema = $this->createSchema('Dog');
+        $schema = $this->createBuilder('Dog');
 
         $this->assertEquals("class Dog\n", $schema->generate());
     }
 
     public function test_generate_class_with_attributes()
     {
-        $schema = $this->createSchema();
+        $schema = $this->createBuilder();
 
         $schema->name('Dolphin')
             ->attribute('age', 'int')
@@ -37,7 +37,7 @@ class ClassDefinitionTest extends TestCase
 
     public function test_generate_class_with_method()
     {
-        $schema = $this->createSchema('Rabbit');
+        $schema = $this->createBuilder('Rabbit');
 
         $markdown = $schema->method('eat')
             ->generate();
@@ -47,7 +47,7 @@ class ClassDefinitionTest extends TestCase
 
     public function test_generate_public_method()
     {
-        $schema = $this->createSchema('Wolf');
+        $schema = $this->createBuilder('Wolf');
 
         $markdown = $schema->publicMethod('hunt', ['Animal animal'])
             ->publicMethod('howls', ['seconds'], 'bool')
@@ -64,7 +64,7 @@ class ClassDefinitionTest extends TestCase
 
     public function test_generate_protected_method()
     {
-        $schema = $this->createSchema('Wolf');
+        $schema = $this->createBuilder('Wolf');
 
         $markdown = $schema->protectedMethod('track', [], 'int')
             ->generate();
@@ -74,7 +74,7 @@ class ClassDefinitionTest extends TestCase
 
     public function test_generate_private_method()
     {
-        $schema = $this->createSchema('Wolf');
+        $schema = $this->createBuilder('Wolf');
 
         $markdown = $schema->privateMethod('think', [], 'bool')
             ->generate();
@@ -84,7 +84,7 @@ class ClassDefinitionTest extends TestCase
 
     public function test_generate_annotation()
     {
-        $schema = $this->createSchema('Flamingo');
+        $schema = $this->createBuilder('Flamingo');
 
         $markdown = $schema->annotation('interface')
             ->generate();
@@ -93,11 +93,11 @@ class ClassDefinitionTest extends TestCase
     }
 
     /**
-     * @param $name
-     * @return ClassSchema
+     * @param string $name
+     * @return ClassBuilder
      */
-    public function createSchema($name = ''): ClassSchema
+    public function createBuilder(string $name = ''): ClassBuilder
     {
-        return new ClassSchema($name);
+        return new ClassBuilder($name);
     }
 }

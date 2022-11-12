@@ -2,7 +2,7 @@
 
 namespace Herrira\Mermaid\ClassDiagram;
 
-class ClassDefinition
+class ClassBuilder
 {
     /** @var string */
     protected $name;
@@ -10,7 +10,7 @@ class ClassDefinition
     /** @var array */
     protected $expressions;
 
-    public function __construct($name)
+    public function __construct($name  = '')
     {
         $this->name = $name;
         $this->expressions = [];
