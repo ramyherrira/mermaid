@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\ClassDiagram;
 
 use Herrira\Mermaid\ClassDiagram\Builder;
 use PHPUnit\Framework\TestCase;
