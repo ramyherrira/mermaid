@@ -1,9 +1,10 @@
 # Mermaid syntax generator for PHP
-A PHP library that enables to you generate mermaid-js syntax.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/herrira/mermaid)](https://packagist.org/packages/herrira/mermaid)
+![Test Status](https://img.shields.io/github/workflow/status/ramyherrira/mermaid/Unit%20tests?label=tests)
 
+A PHP library that enables to you generate mermaid-js syntax.
 ### Available diagrams:
  - Class diagram
-
 
 ## What's mermaid ?
 From the [docs](https://mermaid-js.github.io/mermaid/#/):
