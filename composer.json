@@ -1,5 +1,6 @@
 {
     "name": "herrira/mermaid",
+    "description": "A mermaid syntax builder for PHP.",
     "license": "MIT",
     "autoload": {
         "psr-4": {
